@@ -36,18 +36,20 @@ def main():
    current = datetime.datetime.now()
    day = current.day #stores the day
 
-   answer =  input( "would you like to (1)encode or (2)decode a messeage? please enter 1 or 2:  ")
+   answer =  input( "would you like to encode or decode a messeage?  ")
 
-   if answer == 1: #if the user wants to encode a messeage
+   if answer == "encode": #if the user wants to encode a messeage
       messeage = input("Enter your messeage to be encoded: ")
 
       coded_lessage = coder(messeage, day)
-   else :
+   elif answer == "decode" :
       messeage = input("Enter your messeage to be decoded: ")
+      date_to_decode = int(input("what day was the message recieved? enter as DD  "))
 
-      coded_lessage = decoder(messeage, day)
-
-   coded_lessage = coder(messeage, day) #stores the coded message
+      coded_lessage = decoder(messeage, date_to_decode)
+   else:
+      print ("did not understand")
+      return 0
       
    print ("Your coded messeage is: ", coded_lessage)
 
