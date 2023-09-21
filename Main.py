@@ -21,7 +21,7 @@ def decoder(coded_lessage, day):
    
    for ch in coded_lessage:
       adjusted_shift = day % 26 #stores the remainder of the day divided by 26
-      original = ord(ch) #stores the  value of the character
+      original = ord(ch) #stores the  value of the character using ord(), returns unicode value
       decoded_l = original - adjusted_shift #stores the new value of the character changing it by the day
       if original == ord(' '): #if the character is a space it will stay a space
          decoded_l = ord(' ')
