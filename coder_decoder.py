@@ -31,7 +31,3 @@ def decoder(coded_lessage, day):
       decode += chr(decoded_l) #stores the new character in the decode variable
 
    return decode #returns the decode variable
-      
-
-
-      

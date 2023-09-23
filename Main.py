@@ -4,7 +4,7 @@ import GUI
 
 def main():
    
-   GUI.create_window()
+   GUI.start_window()
    current = datetime.datetime.now()
    day = current.day #stores the day
    
