@@ -11,7 +11,7 @@ def coder_window():
 
     #window is created
     window = tk.Tk()
-    window.title('my window')
+    window.title('coder')
     window.geometry('200x200')
 
     #creates a label
@@ -42,7 +42,7 @@ def decoder_window():
 
     #window is created
     window = tk.Tk()
-    window.title('my window')
+    window.title('decoder')
     window.geometry('200x200')
 
     #creates a label
@@ -73,7 +73,7 @@ def start_window():
     code_button.pack()
 
     #create decode button
-    decode_button = tk.Button(window, text = "Decode", command=coder_window)
+    decode_button = tk.Button(window, text = "Decode", command=decoder_window)
     decode_button.pack()
 
     window.mainloop()
