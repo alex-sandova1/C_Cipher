@@ -4,22 +4,17 @@ import coder_decoder
 
 def start_window():
 
-    def code(key):
+    def code():
+        current = datetime.datetime.now()
+        day = current.day #stores the day
+        input_ = entry.get()
+        result.config(text=coder_decoder.coder(f"{input_}",day))
 
-
-        #encodes the message amd displays in a text box under buttons
-        message = entry.get()
-        coded_message = coder_decoder.coder(message, key)
-        label = tk.Label(window, text = coded_message)
-        label.place(x=150, y=100)
-    
-    def decode(key):
-        #decodes the message amd displays in a text box under buttons
-        message = entry.get()
-        decoded_message = coder_decoder.decoder(message, key)
-        label = tk.Label(window, text = decoded_message)
-        label.place(x=150, y=100)
-
+    def decode():
+        current = datetime.datetime.now()
+        day = current.day #stores the day
+        input_ = entry.get()
+        result.config(text=coder_decoder.decoder(f"{input_}",day))
 
 
     #window is created
@@ -28,10 +23,8 @@ def start_window():
     window.geometry('400x200')
 
     #creates a label
-    label = tk.Label(window, text ="encrypt or decrypt a message")
+    label = tk.Label(window, text ="Make a choice")
     label.place(x=200, y=10, anchor="center")
-
-    label = tk.Label(window, text = "Enter key:")
 
     #creates the text box
     entry = tk.Entry(window)
@@ -42,9 +35,16 @@ def start_window():
     code_button = tk.Button(window, text = "Code", command = code)
     code_button.place(x=100, y=50)
 
+    result = tk.Label(window, text="")
+    result.place(x=175, y=80)
+
     #create decode button
-    decode_button = tk.Button(window, text = "Decode", command = decode )
+    decode_button = tk.Button(window, text = "Decode", command = decode)
     decode_button.place(x=200, y=50)
+
+    result = tk.Label(window, text="")
+    result.place(x=175, y=80)
+    
 
     #create close button
     close_button = tk.Button(window, text = "Close", command= window.destroy)
