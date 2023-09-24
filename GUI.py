@@ -12,7 +12,7 @@ def coder_window():
     #window is created
     window = tk.Tk()
     window.title('coder')
-    window.geometry('200x200')
+    window.geometry('500x500')
 
     #creates a label
     label = tk.Label(window, text ="Enter Message")
@@ -31,8 +31,6 @@ def coder_window():
     window.mainloop()
 
 def decoder_window():
-
-
 
     def on_click():
         current = datetime.datetime.now()
@@ -66,15 +64,24 @@ def start_window():
     #window is created
     window = tk.Tk()
     window.title('Start window')
-    window.geometry('500x300')
+    window.geometry('400x400')
+
+    #creates a label
+    label = tk.Label(window, text ="Make a choice")
+    label.place(x=200, y=10, anchor="center")
+
 
     #create code button
     code_button = tk.Button(window, text = "Code", command=coder_window)
-    code_button.pack()
+    code_button.place(x=100, y=50)
 
     #create decode button
     decode_button = tk.Button(window, text = "Decode", command=decoder_window)
-    decode_button.pack()
+    decode_button.place(x=200, y=50)
+
+    #create close button
+    close_button = tk.Button(window, text = "Close", command= window.destroy)
+    close_button.place(x=155, y=100)
 
     window.mainloop()
 
